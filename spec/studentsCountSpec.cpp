@@ -49,9 +49,9 @@ namespace spec
 			Assert::AreEqual(2, lessCount, L"Score equal to one element case failed.", LINE_INFO());
 			Assert::AreEqual(2, moreCount, L"Score equal to one element case failed.", LINE_INFO());
 			int Arr1[5] = { 10, 20, 31, 40, 50 };
-			studentsCount(Arr1, 5, 30, &lessCount, &moreCount);
+			studentsCount(Arr1, 5, 31, &lessCount, &moreCount);
 			Assert::AreEqual(2, lessCount, L"Score not equal to any element case failed.", LINE_INFO());
-			Assert::AreEqual(3, moreCount, L"Score not equal to any element case failed.", LINE_INFO());
+			Assert::AreEqual(2, moreCount, L"Score not equal to any element case failed.", LINE_INFO());
 		}
 	};
 }
