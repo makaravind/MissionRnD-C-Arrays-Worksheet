@@ -13,8 +13,48 @@ NOTES: Use realloc to allocate memory.
 
 #include <stdio.h>
 #include <malloc.h>
-
+void Swap(int *a, int i, int *b){
+	int t;
+	t = a[i];
+	a[i] = *b;
+	*b = t;
+}
 int * sortedArrayInsertNumber(int *Arr, int len, int num)
 {
-	return NULL;
+	// init error checking
+	if (Arr == NULL) return NULL;
+	if (len < 0) return NULL;
+
+	int i = 0;
+	int temp = -1;
+
+	if (Arr[0] > num) i = 0;
+	else if (Arr[len - 1] < num){
+		len++; // new length
+		Arr = (int*)realloc(Arr, sizeof(int)*len);
+		Arr[len-1] = num;
+		return Arr;
+	}
+	else{
+		while (i<len)
+		{
+			if (Arr[i] < num) i++;
+			else if (Arr[i] == num) return NULL;
+			else
+				break;
+		}
+		
+	}
+	len++; // new length
+	Arr = (int*)realloc(Arr, sizeof(int)*len);
+	temp = Arr[i];
+	for (int k = i + 1; k < len; k++)
+	{
+		int t;
+		t = Arr[k];
+		Arr[k] = temp;
+		temp = t;
+	}
+	Arr[i] = num;
+	return Arr;
 }
