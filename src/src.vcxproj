@@ -12,7 +12,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="studentsCount.cpp" />
-    <ClCompile Include="topKStudents.cpp" />
+    <ClCompile Include="topKStudents.cpp">
+      <DeploymentContent>false</DeploymentContent>
+    </ClCompile>
     <ClCompile Include="scoresDescendingSort.cpp" />
     <ClCompile Include="removeArrayDuplicates.cpp" />
     <ClCompile Include="sortedArrayInsertNumber.cpp" />
